@@ -1,0 +1,201 @@
+.flareVideo .controls {
+  position: absolute;
+  bottom: 20px;
+  height: 57px;
+  min-width: 250px;
+  left: 20%;
+  right: 20%;
+  
+  border: 1px solid #1A1A1A;
+  border-top-color: #5F5F5F;
+  border-bottom-color: #1D1D1D;
+  background: #171717;
+  background: -moz-linear-gradient(top, #454545 0%, #2D2D2D 30%, #1F1F1F 35%, #171717 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#454545), color-stop(0.3, #2D2D2D), color-stop(0.35, #1F1F1F), to(#171717));
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-box-shadow: 0 0 3px #000;
+  -moz-box-shadow: 0 0 3px #000;
+  
+  opacity: 0.9;
+  
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+}
+
+.flareVideo .controls .play,
+.flareVideo .controls .pause,
+.flareVideo .controls .fullScreen,
+.flareVideo .controls .volMin,
+.flareVideo .controls .volMax { 
+  cursor: pointer;
+}
+
+.flareVideo .controls input[type="range"],
+.flareVideo .controls .ui-slider {
+  -khtml-appearance: none; 
+  border: 1px solid #1B1B1B;
+  border-top-color: #060606;
+  border-bottom-color: #202020;
+  background: #0E0E0E;
+  background: -moz-linear-gradient(top, #0E0E0E, #141414);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0E0E0E), to(#141414));
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  height: 10px;
+}
+
+.flareVideo .controls .seek .seekRange {
+  width: 100%;
+}
+
+.flareVideo .controls .seek .seekRange::-webkit-slider-thumb {
+  -khtml-appearance: none; 
+  background: url(../images/default/slider-thumb.png) no-repeat; 
+  width: 8px; 
+  height: 8px;
+}
+
+.flareVideo .controls .seek .seekRange .ui-slider-handle { 
+  display: block;
+  background: url(../images/default/slider-thumb.png) no-repeat; 
+  width: 8px; 
+  height: 8px;  
+}
+
+.flareVideo .controls .fullScreen {
+  width: 16px;
+  height: 16px;
+  text-indent: -5000px;
+  background: url(../images/default/full-screen.png) no-repeat center center;
+}
+
+.flareVideo .controls .volume {
+  width: 90px;
+}
+
+.flareVideo .controls .volume .volMin,
+.flareVideo .controls .volume .volMax {
+  text-indent: -5000px;
+}
+
+.flareVideo .controls .volume .volMin {
+  width: 10px;
+  height: 10px;
+  background: url(../images/default/vol-min.png) no-repeat center center;
+}
+
+.flareVideo .controls .volume .volMax {
+  width: 15px;
+  height: 14px;
+  background: url(../images/default/vol-max.png) no-repeat center center;
+}
+
+.flareVideo .controls .volume .volRange {
+  width: 50px;
+}
+
+.flareVideo .controls .volume ::-webkit-slider-thumb {
+  -khtml-appearance: none; 
+  background: url(../images/default/volume-thumb.png) no-repeat; 
+  width: 10px; 
+  height: 11px;
+}
+
+.flareVideo .controls .volume .ui-slider-handle {
+  display: block;
+  background: url(../images/default/volume-thumb.png) no-repeat; 
+  width: 10px; 
+  height: 11px;
+}
+
+.flareVideo .controls .timeMin,
+.flareVideo .controls .timeMax {
+  font-family: Apex,"Helvetica Neue","HelveticaNeue",helvetica,sans-serif;
+  font-size: 13px;  
+  color: #C2C2C2;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #000;
+}
+
+.flareVideo .controls .pause,
+.flareVideo .controls .play {
+  width: 23px;
+  height: 23px;
+  text-indent: -5000px;  
+}
+
+.flareVideo .controls .pause {
+  display: none;
+  background: url(../images/default/pause.png) no-repeat center center;
+}
+
+.flareVideo .controls .play {
+  display: block;
+  background: url(../images/default/play.png) no-repeat center center;  
+}
+
+.flareVideo.playing .controls .play {
+  display: none;
+}
+
+.flareVideo.playing .controls .pause {
+  display: block;
+}
+
+.flareVideo.idle .controls {
+  opacity: 0;
+}
+
+.flareVideo .controls .fullScreen {
+  position: absolute;
+  right: 13px;
+  top: 10px;
+}
+
+.flareVideo .controls .play,
+.flareVideo .controls .pause {
+  position: absolute;
+  left: 50%;
+  top: 6px;
+}
+
+.flareVideo .controls .seek {
+  position: absolute;
+  bottom: 8px;
+  left: 60px;
+  right: 60px;
+}
+
+.flareVideo .controls .timeMin {
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+}
+
+.flareVideo .controls .timeMax {
+  position: absolute;
+  bottom: 8px;
+  right: 14px;
+}
+
+.flareVideo .controls .volume {
+  position: absolute;
+  left: 10px;
+  top: 13px;
+}
+
+.flareVideo .controls .volume .volMin {
+  position: absolute;
+  left: 0;
+}
+
+.flareVideo .controls .volume .volMax {
+  position: absolute;
+  right: 0;
+}
+
+.flareVideo .controls .volume .volRange {
+  position: absolute;
+  left: 16px;
+}

@@ -1,0 +1,157 @@
+.flareVideo .controls {
+  position: absolute;
+  bottom: 20px;
+  height: 57px;
+  min-width: 250px;
+  left: 20%;
+  right: 20%;
+  height: 40px;
+  
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+}
+
+.flareVideo .controls .play,
+.flareVideo .controls .pause,
+.flareVideo .controls .fullScreen { 
+  cursor: pointer;
+}
+
+.flareVideo .controls input[type="range"],
+.flareVideo .controls .ui-slider {
+  -khtml-appearance: none; 
+  border: 1px solid #777C7C;
+  background-color: transparent;
+  height: 12px;
+  padding: 0;
+}
+
+.flareVideo .controls ::-webkit-slider-thumb {
+  -khtml-appearance: none; 
+  background: #777C7C;
+  width: 3px; 
+  height: 12px;  
+}
+
+.flareVideo .controls .ui-slider-handle { 
+  background: #777C7C;
+  width: 3px; 
+  height: 12px;  
+}
+
+.flareVideo .controls .fullScreen {
+  width: 12px;
+  height: 12px;
+  text-indent: -5000px;
+  background: url(../images/vimeo/full-screen.png) no-repeat center center;
+}
+
+.flareVideo .controls .volume {
+  width: 34px;
+}
+
+.flareVideo .controls .volume .volMin,
+.flareVideo .controls .volume .volMax {
+  display: none;
+}
+
+.flareVideo .controls .volume .volRange {
+  background-color: #31A0E5;
+  border: 0;
+  width: 34px;
+  height: 14px;
+}
+
+.flareVideo .controls .volume .volRange::-webkit-slider-thumb {
+  background-color: #fff;
+}
+
+.flareVideo .controls .volume .volRange .ui-slider-handle {
+  height: 14px;
+}
+
+.flareVideo .controls .timeMin,
+.flareVideo .controls .timeMax {
+  display: none;
+}
+
+.flareVideo .controls .seek {
+  background-color: rgba(23, 35, 34, 0.74);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  height: 40px;
+}
+
+.flareVideo .controls .pause,
+.flareVideo .controls .play {
+  width: 65px;
+  height: 40px;
+  text-indent: -5000px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: rgba(23, 35, 34, 0.74);
+}
+
+.flareVideo .controls .pause:hover,
+.flareVideo .controls .play:hover {
+  background-color: #31A0E5;
+}
+
+.flareVideo .controls .pause {
+  display: none;
+  background-image: url(../images/vimeo/pause.png);
+}
+
+.flareVideo .controls .play {
+  display: block;
+  background-image: url(../images/vimeo/play.png);
+}
+
+.flareVideo.playing .controls .play {
+  display: none;
+}
+
+.flareVideo.playing .controls .pause {
+  display: block;
+}
+
+.flareVideo.idle .controls {
+  opacity: 0;
+}
+
+.flareVideo .controls .fullScreen {
+  position: absolute;
+  right: 68px;
+  top: 20px;
+  z-index: 10;
+}
+
+.flareVideo .controls .play,
+.flareVideo .controls .pause {
+  position: absolute;
+  left: 10px;
+  top: 6px;
+}
+
+.flareVideo .controls .seek {
+  position: absolute;
+  top: 6px;
+  left: 85px;
+  right: 55px;
+}
+
+.flareVideo .controls .seek .seekRange {
+  position: absolute;
+  top: 14px;
+  right: 80px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.flareVideo .controls .volume {
+  position: absolute;
+  right: 90px;
+  top: 20px;
+}
