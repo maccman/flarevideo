@@ -146,7 +146,9 @@ FlareVideo.fn.fullScreen = function(state){
     this.video[state ? "enterFullScreen" : "exitFullScreen"]();
   } else {
     (state ? $("body") : this.parent).prepend(this.element);
+    var isPlaying = (this.state == "playing");
     this.element[state ? "addClass" : "removeClass"]("fullScreen");
+    if (isPlaying) this.play();
   }
 };
 
@@ -601,7 +603,7 @@ FlareVideo.fn.setupEvents = function(){
 
   this.onerror($.proxy(function(e){
     if (this.useNative) {
-      if (this.video.error.code == 4) {
+      if (this.video.error && this.video.error.code == 4) {
         var flashType = this.flashSources()[0];
         if (flashType) {
           this.fallbackToFlash();
@@ -609,7 +611,7 @@ FlareVideo.fn.setupEvents = function(){
           console.error("Format not supported");
         }
       } else {
-        console.error("Error - " + this.video.error.code);
+        console.error("Error - " + this.video.error);
       }
     } else {
       console.error("Flash error");
