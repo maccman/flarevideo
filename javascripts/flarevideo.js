@@ -148,7 +148,7 @@ FlareVideo.fn.fullScreen = function(state){
     (state ? $("body") : this.parent).prepend(this.element);
     var isPlaying = (this.state == "playing");
     this.element[state ? "addClass" : "removeClass"]("fullScreen");
-    if (isPlaying) this.play();
+    if (isPlaying) this.ready($.proxy(this.play, this));
   }
 };
 
@@ -317,11 +317,11 @@ FlareVideo.fn.setupFlash = function(){
     flashvars: {flashID:flashID},
     allowScriptAccess: "sameDomain",
     allowFullScreen: true,
-    width: "100%",
-    height: "100%"
+    width:  this.options.height,
+    height: this.options.width
   },{ 
     version: 9, 
-    expressInstall: true,
+    expressInstall: true
   });
   
   this.video = this.videoElement.find("embed")[0];
@@ -374,6 +374,7 @@ FlareVideo.eiTrigger = function(id, name){
 };
 
 FlareVideo.eiTriggerReady = function(id) {
+  alert('ready')
   try {
     this.flashInstance[id].triggerReady();
   } catch(e) {
