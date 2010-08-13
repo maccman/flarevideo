@@ -374,7 +374,6 @@ FlareVideo.eiTrigger = function(id, name){
 };
 
 FlareVideo.eiTriggerReady = function(id) {
-  alert('ready')
   try {
     this.flashInstance[id].triggerReady();
   } catch(e) {
