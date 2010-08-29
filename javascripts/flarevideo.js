@@ -317,8 +317,8 @@ FlareVideo.fn.setupFlash = function(){
     flashvars: {flashID:flashID},
     allowScriptAccess: "sameDomain",
     allowFullScreen: true,
-    width:  this.options.height,
-    height: this.options.width
+    width:  this.options.width,
+    height: this.options.height
   },{ 
     version: 9, 
     expressInstall: true
