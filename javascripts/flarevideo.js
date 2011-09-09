@@ -34,7 +34,11 @@ $.fn.idleTimer = function(options){
 
 var testVideoElement = $("<video />")[0];
 var nativeSupport    = (typeof testVideoElement.canPlayType != 'undefined');
-var nativeFullScreenSupport = (typeof testVideoElement.webkitEnterFullScreen != 'undefined');
+var nativeFullScreenSupport = (
+  (typeof testVideoElement.webkitEnterFullScreen != 'undefined') ? 'webkit' :
+    (typeof testVideoElement.mozRequestFullScreen != 'undefined') ? 'mozGecko' :
+    false);
+
 
 // webkitEnterFullScreen fails under Chrome at the moment
 if (navigator.userAgent.match('Chrome')) nativeFullScreenSupport = false;
@@ -142,13 +146,21 @@ FlareVideo.fn.togglePlay = function(){
 FlareVideo.fn.fullScreen = function(state){
   if (typeof state == "undefined") state = true;
   this.inFullScreen = state;
-  if (this.options.useNativeFullScreen) {
+  switch (this.options.useNativeFullScreen) {
+  case 'webkit': {
     this.video[state ? "enterFullScreen" : "exitFullScreen"]();
-  } else {
+    break;
+    }
+  case 'mozGecko': {
+    this.video[state ? "mozRequestFullScreen" : "mozCancelFullScreen"]();
+    break;
+  }
+  default: {
     (state ? $("body") : this.parent).prepend(this.element);
     var isPlaying = (this.state == "playing");
     this.element[state ? "addClass" : "removeClass"]("fullScreen");
     if (isPlaying) this.ready($.proxy(this.play, this));
+  }
   }
 };
 
